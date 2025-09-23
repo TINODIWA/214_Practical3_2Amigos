@@ -6,7 +6,7 @@
 class Luyanda : public Users
 {
     public:
-        Luyanda();
+        Luyanda(ChatRoom* room);
 };
 
 #endif

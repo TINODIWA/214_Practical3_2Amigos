@@ -6,7 +6,7 @@
 class Dominiqu : public Users
 {
     public:
-        Dominiqu();
+        Dominiqu(ChatRoom* room);
 };
 
 #endif

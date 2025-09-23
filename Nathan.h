@@ -6,7 +6,7 @@
 class Nathan : public Users
 {
     public:
-        Nathan();
+        Nathan(ChatRoom* room);
 };
 
 #endif

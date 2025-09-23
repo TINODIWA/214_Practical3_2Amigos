@@ -6,6 +6,7 @@
 
 #include <string>
 #include <vector>
+#include <iostream>
 
 using namespace std;
 
@@ -15,14 +16,16 @@ class ChatRoom
         ChatRoom();
         ~ChatRoom();
 
-        virtual void registerUser(Users user) = 0;
-        void sendMessage(string message, Users fromUser);
-        void saveMessage(string message, Users fromUser);
-        virtual void removeUser(Users user) = 0;
+        virtual void registerUser(Users* user) = 0;
+        virtual void sendMessage(string message, Users* fromUser) = 0;
+        virtual void saveMessage(string message, Users* fromUser) = 0;
+        virtual void removeUser(Users* user) = 0;
         // virtual Iterator* createIterator() = 0;
+        vector<Users*> getUsers();
+        vector<string> getChatHistory();
 
     private:
-        vector<Users> users;
+        vector<Users*> users;
         vector<string> chatHistory;
 };
 
