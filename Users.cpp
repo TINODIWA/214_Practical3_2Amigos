@@ -1,29 +1,28 @@
 #include "Users.h"
-#include "ChatRoom.h"
 
-Users::Users(ChatRoom* room = nullptr, string name = "") : chatRooms(room), name(name){}
+Users::Users(ChatRoom *room, string name) : chatRooms(room), name(name) {}
 
-Users::~Users()
+Users::~Users() {}
+
+void Users::send(string message, ChatRoom *room)
 {
-    delete chatRooms;
-}
-
-void Users::send(string message, ChatRoom* room)
-{
+    // send message to chat room to deal with
     room->sendMessage(message, this);
 }
 
-void Users::receive(string message, Users* fromUser, ChatRoom* room)
+void Users::receive(string message, Users *fromUser, ChatRoom *room)
 {
-    room->saveMessage(message, fromUser);
+    // receive message from chat room
+    room->saveMessage(fromUser->name + ": " + message, fromUser);
 }
 
 void Users::executeAll()
 {
-    //need to implement
+    // need to implement
 }
 
 string Users::getName()
 {
+    // get the name of the user to be accessed by ChatRoom's derived classes
     return name;
 }

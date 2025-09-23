@@ -1,3 +1,3 @@
 #include "Nathan.h"
 
-Nathan::Nathan(ChatRoom* room = nullptr) : Users(room, "Nathan"){}
+Nathan::Nathan(ChatRoom *room) : Users(room, "Nathan") {}
