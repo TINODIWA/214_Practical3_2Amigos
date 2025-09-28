@@ -1,7 +1,8 @@
 files = Main
 
 # List all source files that need to be compiled
-SOURCES = Main.cpp ChatRoom.cpp Users.cpp CtrlCat.cpp Dogorithm.cpp Nathan.cpp Dominiqu.cpp Luyanda.cpp
+SOURCES = Main.cpp ChatRoom.cpp Users.cpp CtrlCat.cpp Dogorithm.cpp Nathan.cpp Dominiqu.cpp Luyanda.cpp \
+          Command.cpp SendMessageCommand.cpp SaveMessageCommand.cpp \
 
 Main:
 	g++ -g -std=c++11 $(SOURCES) -o Main
