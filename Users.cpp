@@ -4,7 +4,8 @@
 #include "SendMessageCommand.h"
 #include "SaveMessageCommand.h"
 #include <iostream>
-// #in/**
+// #in
+/**
  * @brief Execute all queued commands
  * 
  * Implements the command execution mechanism for the Command pattern.
@@ -26,19 +27,6 @@
  * 
  * @see addCommand() for command queueing mechanism
  */
-void Users::executeAll()
-{
-    // Execute all commands in the queue
-    for (Command* cmd : commandQueue)
-    {
-        if (cmd != nullptr)
-        {
-            cmd->execute();
-            delete cmd; // Clean up after execution
-        }
-    }
-    commandQueue.clear(); // Clear the queue after execution
-}thm>
 
 /**
  * @file Users.cpp
